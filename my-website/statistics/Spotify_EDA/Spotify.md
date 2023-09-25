@@ -7,7 +7,7 @@ sidebar_position: 3
 
 Dataset of songs of various artist in the world and for each song is present:
 
-- Several statistics of the music version on spotify, including the number of streams;
+- _Several statistic_ of the music version on spotify, including the number of streams;
 - Number of views of the official music video of the song on youtube.
 
 ## Variables in DataSet

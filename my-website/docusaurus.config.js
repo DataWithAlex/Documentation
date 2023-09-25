@@ -4,9 +4,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  title: 'Explore Data with Alex',
+  tagline: 'View the Documentation for Data Science Skills',
+  favicon: 'img/alex.png',
   url: 'https://DataWithAlex.github.io',
   baseUrl: '/Documentation/',
   organizationName: 'DataWithAlex',
@@ -70,10 +70,10 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
+        title: 'DataWithAlex',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'img/alex.png',
         },
         items: [
           {
