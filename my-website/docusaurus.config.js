@@ -69,6 +69,9 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        // "dark" | "light"
+        defaultMode: 'dark' },
       navbar: {
         title: 'DataWithAlex',
         logo: {
@@ -104,6 +107,7 @@ const config = {
             label: 'GitHub',
             position: 'right',
           },
+          
         ],
       },
       footer: {
