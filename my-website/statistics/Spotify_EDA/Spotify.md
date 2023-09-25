@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 3
 ---
 # STA: Spotify Exploratory Data Analysis
 
@@ -64,4 +64,4 @@ head(data)
 
 This dataset has 26 unique variables, and each are interesting for different reasons. However, for the purpose of statistical analysis some of them are not necessary. An example is the Youtube URL `Url_youtube`. So this code is going to remove those values.
 
-![Image Description](../tutorial-basics/static/heatmap.png)
+![Image Description](../Spotify_EDA/static/heatmap.png)

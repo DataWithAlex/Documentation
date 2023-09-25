@@ -1,6 +1,4 @@
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
-
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
@@ -9,24 +7,12 @@ const config = {
   title: 'My Site',
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
-
-  // Set the production url of your site here
   url: 'https://DataWithAlex.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/Documentation/',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'DataWithAlex', // Usually your GitHub org/user name.
-  projectName: 'Documentation', // Usually your repo name.
-
+  organizationName: 'DataWithAlex',
+  projectName: 'Documentation',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -38,16 +24,15 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          // id: 'docs', // omitted => default instance
+          routeBasePath: 'docs',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
@@ -58,15 +43,32 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'statistics',
+        path: 'statistics',
+        routeBasePath: 'statistics',
+        sidebarPath: require.resolve('./sidebarsStatistics.js'),
+        // ... other options
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'azure',
+        path: 'azure',
+        routeBasePath: 'azure',
+        sidebarPath: require.resolve('./sidebarsAzure.js'),
+        // ... other options
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({ // Add or update the colorMode property
-      colorMode: {
-        defaultMode: 'dark', // Set default mode to 'dark'
-        respectPrefersColorScheme: true, // This will respect the user's system preference},
-      },
-      // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+    ({
       navbar: {
         title: 'My Site',
         logo: {
@@ -75,12 +77,28 @@ const config = {
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            type: 'doc',
             position: 'left',
-            label: 'Tutorial',
+            docId: 'intro',
+            label: 'Docs',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            to: '/statistics/intro',   // To highlight the navbar item, you must link to a document, not a top-level directory
+            position: 'left',
+            label: 'Statistics',
+            activeBaseRegex: `/statistics/`,
+          },
+          {
+            to: '/azure/intro',   // To highlight the navbar item, you must link to a document, not a top-level directory
+            position: 'left',
+            label: 'Azure',
+            activeBaseRegex: `/azure/`,
+          },
+          {
+            to: '/blog',
+            label: 'Blog',
+            position: 'left'
+          },
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
@@ -95,8 +113,8 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+               label: 'Tutorial',
+               to: '/docs/intro',
               },
             ],
           },
