@@ -2,6 +2,10 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
+const math = require('remark-math');
+const katex = require('rehype-katex');
+
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Explore Data with Alex',
@@ -27,6 +31,8 @@ const config = {
           // id: 'docs', // omitted => default instance
           routeBasePath: 'docs',
           sidebarPath: require.resolve('./sidebars.js'),
+          remarkPlugins: [math],
+          rehypePlugins: [katex],
           // Please change this to your repo.
           editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
