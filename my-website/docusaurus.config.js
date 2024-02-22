@@ -1,8 +1,8 @@
 // @ts-check
-import lightCodeTheme from 'prism-react-renderer/themes/github';
-import darkCodeTheme from 'prism-react-renderer/themes/dracula';
-import math from 'remark-math';
-import katex from 'rehype-katex';
+const lightCodeTheme = require('prism-react-renderer/themes/github');
+const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const math = require('remark-math');
+const katex = require('rehype-katex');
 
 /** @type {import('@docusaurus/types').Config}*/
 const config = {
@@ -153,4 +153,4 @@ const config = {
   },
 };
 
-export default config;
+module.exports = config;
