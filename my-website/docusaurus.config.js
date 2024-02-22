@@ -2,10 +2,6 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
-// Use dynamic import() for ES modules
-const math = import('remark-math');
-const katex = import('rehype-katex');
-
 /** @type {import('@docusaurus/types').Config}*/
 const config = {
   title: 'Explore Data with Alex',
@@ -28,8 +24,9 @@ const config = {
         docs: {
           routeBasePath: 'docs',
           sidebarPath: require.resolve('./sidebars.js'),
-          remarkPlugins: [math],
-          rehypePlugins: [katex],
+          // Ensure that remark-math and rehype-katex are imported dynamically
+          remarkPlugins: [import('remark-math')],
+          rehypePlugins: [import('rehype-katex')],
           editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
@@ -151,6 +148,11 @@ const config = {
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
+    },
+    // Enable KaTeX for rendering math equations
+    math: {
+      mathjax: false, // Disable MathJax
+      katex: true, // Enable KaTeX
     },
   },
 };
