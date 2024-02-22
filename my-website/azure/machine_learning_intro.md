@@ -20,17 +20,24 @@ Machine learning is broadly divided into three main types:
 
 ## Why is Reducing Error Important?
 
-In machine learning, the objective is to make accurate predictions or decisions based on data. This is often represented by minimizing the gap between the predicted (\( \hat{y} \)) and actual (\( y \)) values. However, no model is perfect, and errors can arise due to various reasons, such as noise in the data, insufficient training data, or a model that doesn't fit the data well. 
+In machine learning, the objective is to make accurate predictions or decisions based on data. This is often represented by minimizing the gap between the predicted ($\hat{y}$) and actual ($y$) values. However, no model is perfect, and errors can arise due to various reasons, such as noise in the data, insufficient training data, or a model that doesn't fit the data well.
 
-Reducing error is crucial because it directly impacts the effectiveness and reliability of the machine learning model. A model with high error rates, indicated by a significant difference between \( \hat{y} \) and \( y \), is less likely to make accurate predictions, which can lead to incorrect decisions or outcomes.
+Reducing error is crucial because it directly impacts the effectiveness and reliability of the machine learning model. A model with high error rates, indicated by a significant difference between $\hat{y}$ and $y$, is less likely to make accurate predictions, which can lead to incorrect decisions or outcomes.
 
 The main task in all machine learning problems, therefore, revolves around minimizing these errors to improve the model's performance. This involves understanding the types of errors that can occur (such as bias and variance), using appropriate error metrics to evaluate the model, and applying techniques to reduce error and enhance the model's accuracy.
 
 In the next sections, we will delve deeper into the types of errors in machine learning, discuss various error metrics, and explore strategies to reduce error and improve model performance.
 
-The equation representing the gap between predicted and actual values (\( \hat{y} \) and \( y \)) can be formulated as:
+The equation representing the gap between predicted and actual values can be formulated using the Mean Squared Error (MSE), which is represented as:
 
-\[
-\Large z = \frac{{(Ȳ_{\text{category}} - Ȳ_{\text{overall}})}}{{\sqrt{\frac{{MSE}}{{n_{\text{category}}}}}}}
-\]
+$$
+\text{MSE} = \frac{1}{n}\sum_{i=1}^{n}(\hat{y}_i - y_i)^2
+$$
+
+Where:
+- $n$ is the number of observations,
+- $\hat{y}_i$ is the predicted value,
+- $y_i$ is the actual value.
+
+This formula calculates the average of the squares of the errors, that is, the average squared difference between the estimated values and the actual value. Reducing MSE is a common objective in many machine learning tasks to enhance model accuracy.
 
