@@ -1,3 +1,0 @@
-# Another document
-
-Something
