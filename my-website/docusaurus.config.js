@@ -1,8 +1,10 @@
 // @ts-check
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const math = require('remark-math');
-const katex = require('rehype-katex');
+
+// Use dynamic import() for ES modules
+const math = import('remark-math');
+const katex = import('rehype-katex');
 
 /** @type {import('@docusaurus/types').Config}*/
 const config = {
